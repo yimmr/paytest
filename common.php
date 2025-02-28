@@ -9,6 +9,9 @@ function storagePath(...$path)
 
 function saveRequest()
 {
+    if (!is_dir(STORAGE_PATH)) {
+        mkdir(STORAGE_PATH, 0755);
+    }
     $data = [
         'time'    => time(),
         'time'    => date('Y-m-d H:i:s'),
